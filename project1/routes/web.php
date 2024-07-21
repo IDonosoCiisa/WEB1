@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectPostController;
 use App\Http\Controllers\ProjectPutController;
 use App\Http\Controllers\ProjectDeleteController;
+use App\Http\Controllers\UFController;
 
 
 
@@ -20,3 +21,4 @@ Route::get('/v1/get/{id}', [ProjectGetOneController::class, 'getOne']);
 Route::delete('/v1/delete/{id}', [ProjectDeleteController::class, 'deleteOne']);
 Route::put('/v1/put/{id}', [ProjectPutController::class, 'updateOne']);
 Route::post('/v1/post', [ProjectPostController::class, 'createOne']);
+Route::get("/v1/uf", [UFController::class, 'getUf']);
