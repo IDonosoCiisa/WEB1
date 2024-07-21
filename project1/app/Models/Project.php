@@ -132,8 +132,8 @@ class Project
 
     public static function getAll()
     {
-        $project = new Project(1, 'Proyecto 1', Date::now()->toDateTimeString(), 'Activo', 'Juan Perez', 1000);
-        $project2 = new Project(2, "Proyecto 2", Date::now()->toDateTimeString(), 'Activo', 'Juan Perezzz', 1000);
+        $project = new Project(1, 'Proyecto 1', "14/12/1986", 'Activo', 'Juan Perez', 1000);
+        $project2 = new Project(2, "Proyecto 2", "14/12/1986", 'Activo', 'Juan Perezzz', 1000);
         $projects[0] = $project;
         $projects[1] = $project2;
         return $projects;
@@ -141,7 +141,7 @@ class Project
 
     public static function getById($id)
     {
-        $project = new Project($id, "Proyecto $id", Date::now()->toDateTimeString(), 'Activo', 'Juan Perez', 1000);
+        $project = new Project($id, "Proyecto $id", "14/12/1986", 'Activo', 'Juan Perez', 1000);
         return $project;
     }
 
