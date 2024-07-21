@@ -130,7 +130,7 @@ class Project
         $this->monto = $monto;
     }
 
-    public static function getAll()
+    public static function getAll() : array
     {
         $project = new Project(1, 'Proyecto 1', "14/12/1986", 'Activo', 'Juan Perez', 1000);
         $project2 = new Project(2, "Proyecto 2", "14/12/1986", 'Activo', 'Juan Perezzz', 1000);
@@ -139,25 +139,25 @@ class Project
         return $projects;
     }
 
-    public static function getById($id)
+    public static function getById($id): Project
     {
         $project = new Project($id, "Proyecto $id", "14/12/1986", 'Activo', 'Juan Perez', 1000);
         return $project;
     }
 
-    public static function newProject($project)
+    public static function newProject($project) : Project
     {
         $createdproject = new Project($project->getId(), $project->getNombre(), $project->getFechaDeInicio(), $project->getEstado(), $project->getResponsable(), $project->getMonto());
         return $createdproject;
     }
 
-    public static function updateProject($project, $id)
+    public static function updateProject($project, $id): Project
     {
         $updatedProject = new Project($id, $project->getNombre(), $project->getFechaDeInicio(), $project->getEstado(), $project->getResponsable(), $project->getMonto());
         return $updatedProject;
     }
 
-    public static function deleteProject($id)
+    public static function deleteProject($id) : string
     {
         return "Proyecto $id eliminado";
     }
