@@ -1,13 +1,20 @@
 <?php
 namespace App\Http\Controllers;
+use App\Providers\gateway\UfGateway;
+
 class UFController extends Controller
+
 {
+    protected $ufGateway;
+
+    public function __construct(UfGateway $ufGateway)
+    {
+        $this->ufGateway = $ufGateway;
+    }
+
     public function getUf()
     {
-        $url = "https://mindicador.cl/api/uf";
-        $json = file_get_contents($url);
-        $json_data = json_decode($json, true);
-        $uf = $json_data['serie'][0]['valor'];
+        $uf = $this->ufGateway->getUf();
         return view('ufView', compact('uf'));
     }
 }

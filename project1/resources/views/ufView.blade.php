@@ -1,1 +1,1 @@
- el valor de la uf es: {{$uf}}
+ el valor de la uf es: {{$uf->getUf()}}
